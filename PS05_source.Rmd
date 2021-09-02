@@ -41,7 +41,10 @@ library(readr)
 Next, the data is read into the object `hate_crimes` from where it is stored on the web using the `read_csv()` function. 
 
 ```{r}
-hate_crimes <- read_csv("http://bit.ly/2ItxYg3")
+url <- "http://bit.ly/2ItxYg3"
+if(!file.exists("./hate_crimes.csv")){
+    download.file(url, destfile = "./hate_crimes.csv")}
+hate_crimes <- read_csv("./hate_crimes.csv")
 ```
 
 ```{r}
