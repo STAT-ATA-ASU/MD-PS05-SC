@@ -42,9 +42,12 @@ Next, the data is read into the object `hate_crimes` from where it is stored on 
 
 ```{r}
 url <- "http://bit.ly/2ItxYg3"
-if(!file.exists("./hate_crimes.csv")){
-    download.file(url, destfile = "./hate_crimes.csv")}
-hate_crimes <- read_csv("./hate_crimes.csv")
+if(!dir.exists("./data/")){
+  dir.create("./data/")
+}
+if(!file.exists("./data/hate_crimes.csv")){
+    download.file(url, destfile = "./data/hate_crimes.csv")}
+hate_crimes <- read_csv("./data/hate_crimes.csv")
 ```
 
 ```{r}
@@ -87,7 +90,7 @@ Let's start by modeling the relationship between:
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++
 
 </div> 
 
@@ -105,7 +108,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 
 </div> 
 
@@ -115,7 +118,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 
 </div> 
 
@@ -126,7 +129,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 
 </div> 
 
@@ -136,7 +139,12 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
+```{r}
+# Your code here
 
+```
+
++
 
 </div> 
 
@@ -153,7 +161,9 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++
++
++
 
 </div> 
 
@@ -169,7 +179,7 @@ group_by(trump_support) %>%
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++
 
 </div> 
 
@@ -208,12 +218,17 @@ $$
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
+```{r}
+# Your code here
+```
+
++ 
 
 
 </div> 
 
 
-11. Which 5 states had the highest rate of hate crimes? What was the level of Trump support in these 5 states? You can solve this any way you choose, using code or not...
+11. Which 5 states had the highest rate of hate crimes? What was the level of Trump support in these 5 states? Solve this question programmatically.
 
 Do these results surprise you? (There is no right answer to this question.)
 
@@ -227,7 +242,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 Note: The District of Columbia is not actually a state!
 
-
++ 
 
 </div> 
 
@@ -274,6 +289,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++ 
 
 </div> 
 
@@ -284,7 +300,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 
 </div> 
 
@@ -295,6 +311,11 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
+```{r}
+# Your code here
+```
+
++ 
 
 </div> 
 
@@ -309,6 +330,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
++
 
 </div> 
 
@@ -318,7 +340,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 # Hate Crimes and Household Income 
 
-19. Create a model that examines the relationship between `hate_crimes` and median household income in the state `median_house_inc`.  Name the model `job_med_mod`. 
+19. Create a model that examines the relationship between `hate_crimes` and median household income in the state `median_house_inc`.  Name the model `job_med_mod`.  Run the function `summary()` on the model `job_med_mod`. 
 
 ```{r}
 # Type your code and comments inside the code chunk
@@ -331,12 +353,12 @@ Type your complete sentence answer here using inline R code and delete this comm
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.
 
-
++ 
 
 </div> 
 
 
-21. Run the `get_regression_points()` function for the `hate_crimes` and `median_house_inc` model (`job_med_mod`). 
+21. Show the first six rows of the output created from running the `get_regression_points()` function on `job_med_mod`. 
 
 ```{r}
 # Type your code and comments inside the code chunk
@@ -344,7 +366,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 ```
 
 
-22. Take a look at data for Maine (row 2). Did the model **overpredict** or **underpredict** the `hate_crimes` level, compared to what was observed in the data?
+22. Take a look at data for Maine (row 2 of `hate_crimes`). Did the model (`job_med_mod`) **overpredict** or **underpredict** the `hate_crimes` level, compared to what was observed in the data?
 
 <div id="answer">
 Type your complete sentence answer here using inline R code and delete this comment.

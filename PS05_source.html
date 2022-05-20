@@ -1640,7 +1640,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Problem Set 05: Regression with One Categorical Variable</h1>
 <h4 class="author">Your Name Goes Here</h4>
-<h4 class="date">Last compiled: May 19, 2022 at 08:03:38 AM</h4>
+<h4 class="date">Last compiled: May 20, 2022 at 09:29:48 AM</h4>
 
 </div>
 
@@ -1659,9 +1659,12 @@ library(moderndive)
 library(readr)</code></pre>
 <p>Next, the data is read into the object <code>hate_crimes</code> from where it is stored on the web using the <code>read_csv()</code> function.</p>
 <pre class="r"><code>url &lt;- &quot;http://bit.ly/2ItxYg3&quot;
-if(!file.exists(&quot;./hate_crimes.csv&quot;)){
-    download.file(url, destfile = &quot;./hate_crimes.csv&quot;)}
-hate_crimes &lt;- read_csv(&quot;./hate_crimes.csv&quot;)</code></pre>
+if(!dir.exists(&quot;./data/&quot;)){
+  dir.create(&quot;./data/&quot;)
+}
+if(!file.exists(&quot;./data/hate_crimes.csv&quot;)){
+    download.file(url, destfile = &quot;./data/hate_crimes.csv&quot;)}
+hate_crimes &lt;- read_csv(&quot;./data/hate_crimes.csv&quot;)</code></pre>
 <pre class="r"><code>glimpse(hate_crimes)</code></pre>
 <pre><code>Rows: 51
 Columns: 9
@@ -1701,6 +1704,9 @@ $ income           &lt;dbl&gt; 46686, 51710, 54310, 54916, 57522, 58633, 58875, 
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li>Create a model that examines the relationship between hate crime rates and the level of Trump support. Store the results of your model in an object named <code>hate_mod</code>. Generate a regression table using <code>hate_mod</code>.</li>
@@ -1711,24 +1717,37 @@ $ income           &lt;dbl&gt; 46686, 51710, 54310, 54916, 57522, 58633, 58875, 
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="5" style="list-style-type: decimal">
 <li>What does the model estimate as the number of hate crimes per 100,000 people in states with “low” Trump support?</li>
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="6" style="list-style-type: decimal">
 <li>Does the model estimate that hate crimes are more frequent in states that show “low” or “high” support for Trump?</li>
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="7" style="list-style-type: decimal">
 <li>How much greater were hate crimes in “medium” Trump-support states compared to “high” Trump-support states?</li>
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<pre class="r"><code># Your code here</code></pre>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="8" style="list-style-type: decimal">
 <li>What are the three possible fitted values <span class="math inline">\(\widehat{y}\)</span> for this model? Hint: use the <code>get_regression_points()</code> function to explore this if you are not sure!</li>
@@ -1736,6 +1755,11 @@ $ income           &lt;dbl&gt; 46686, 51710, 54310, 54916, 57522, 58633, 58875, 
 <pre class="r"><code># Type your code and comments inside the code chunk</code></pre>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 </div>
 <ol start="9" style="list-style-type: decimal">
 <li>Below we calculate the group means of hate crimes for the <code>high</code>, <code>medium</code> and <code>low</code> levels of Trump support. How do these numbers compare to the three possible fitted values <span class="math inline">\(\widehat{y}\)</span> for this model?</li>
@@ -1769,6 +1793,9 @@ group_by(trump_support) %&gt;%
 </div>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<ul>
+<li></li>
+</ul>
 </div>
 <hr />
 <div id="the-regression-equation" class="section level2 unnumbered">
@@ -1792,6 +1819,10 @@ group_by(trump_support) %&gt;%
 </ol>
 <div id="answer">
 <p>Type your complete sentence answer here using inline R code and delete this comment.</p>
+<pre class="r"><code># Your code here</code></pre>
+<ul>
+<li></li>
+</ul>
 </div>
 <ol start="11" style="list-style-type: decimal">
 <li>Which 5 states had the highest rate of hate crimes? What was the level of Trump support in these 5 states? You can solve this any way you choose, using code or not…</li>
