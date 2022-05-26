@@ -65,8 +65,7 @@ This week we will use three categorical explanatory variables in this data set:
 * `median_house_inc`: median household income in the state (low or high - split below or above mean)
 
 
-
-*** 
+_________ 
 
 
 
@@ -77,6 +76,7 @@ Let's start by modeling the relationship between:
 * $y$: `hate_crimes` per 100K individuals 
 * $x$: Level of `trump_support` in the state: `low`, `medium`, or `high`
 
+__________
 
 1. Create a visual model of these data (a graph) that will allow you to conduct an "eyeball test" of the relationship between hate crimes per 100K and level of Trump support. Include appropriate axes labels and a title. Please note that because of alphanumeric ordering, the levels of `trump_support` are ordered `high`, `low`, `medium`, and hence the baseline group is `high`. Also note, that we could "reorder" the levels to `low`, `medium`, `high`....though we will leave them as is for this Problem Set. 
 
