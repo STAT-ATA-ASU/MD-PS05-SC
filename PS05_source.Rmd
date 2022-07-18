@@ -12,6 +12,7 @@ output:
     css: MyLab.css 
 ---
 
+____________
 
 ```{r include = FALSE}
 # Do not edit this code block/chunk!
@@ -85,6 +86,8 @@ __________
 
 ```
 
+____________
+
 2.  Comment on the relationship between  `trump_support`, and `hate_crimes`. Is this what you would've expected?
 
 <div id="answer">
@@ -94,6 +97,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 3. Create a model that examines the relationship between hate crime rates and the level of Trump support.  Store the results of your model in an object named `hate_mod`.  Generate a regression table using `hate_mod`. 
 
@@ -102,6 +106,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
+____________
 
 4. What does the intercept mean in this regression table?
 
@@ -112,6 +117,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 5. What does the model estimate as the number of hate crimes per 100,000 people in states with "low" Trump support?
 
@@ -122,7 +128,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-
+____________
 
 6. Does the model estimate that hate crimes are more frequent in states that show "low" or "high" support for Trump?
 
@@ -133,6 +139,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 7. How much greater were hate crimes in "medium" Trump-support states compared to "high" Trump-support states?
 
@@ -148,7 +155,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-
+____________
 
 8. What are the three possible fitted values $\widehat{y}$ for this model? Hint: use the `get_regression_points()` function to explore this if you are not sure!
 
@@ -167,6 +174,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 9.  Below we calculate the group means of hate crimes for the `high`, `medium` and `low` levels of Trump support. How do these numbers compare to the three possible fitted values $\widehat{y}$ for this model?
 
@@ -183,9 +191,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-
-*** 
-
+____________ 
 
 
 ## The Regression Equation{-}
@@ -199,7 +205,7 @@ $$
 
 So for instance, in a state in which `trump_support` is "low" you would plug in 1 for $1_{\mbox{low support}}(x)$, and 0 in for  $1_{\mbox{med support}}(x)$ and solve as follows:
 
-***
+____________
 
 $$
 \begin{aligned} 
@@ -209,9 +215,7 @@ $$
 \end{aligned} 
 $$
 
-
-***
-
+____________
 
 10. Solve the regression equation for a state in which `trump_support` is "high".
 
@@ -227,6 +231,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 11. Which 5 states had the highest rate of hate crimes? What was the level of Trump support in these 5 states? Solve this question programmatically.
 
@@ -246,7 +251,7 @@ Note: The District of Columbia is not actually a state!
 
 </div> 
 
-*** 
+____________
 
 # Hate Crimes and Unemployment  
 
@@ -255,7 +260,7 @@ We will next model the relationship between:
 * $y$: `hate_crimes` per 100K individuals  after the 2016 US election 
 * $x$: Level of unemployment in the state (`low`, or `high`)
 
-***
+____________
 
 12. Create a visual model of this data (a graph) that will allow you to conduct an "eyeball test" of the relationship between hate crimes per 100K and unemployment level. Include appropriate axes labels and a title.
 
@@ -264,7 +269,7 @@ We will next model the relationship between:
 
 ```
 
-
+____________
 
 13. Create a model that examines the relationship between hate crime rates and the unemployment level.  Name this model `job_mod`. Generate a regression table for `job_mod`.
 
@@ -273,6 +278,7 @@ We will next model the relationship between:
 
 ```
 
+____________
 
 14. Write out the regression equation for `job_mod`. 
 
@@ -283,6 +289,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 15. What does the intercept mean in this regression table?
 
@@ -293,7 +300,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-
+____________
 
 16. What does the model estimate as the number of hate crimes per 100,000 people in states with  "low" unemployment?
 
@@ -304,7 +311,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-
+____________
 
 17. What are the two possible fitted values $\widehat{y}$ for this model? Why are there only two this time, instead of the three like the previous model?
 
@@ -319,6 +326,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 18. Use the `get_regression_points()` function to generate a table showing the fitted values and the residuals for the model relating `hate_crimes` to unemployment (`job_mod`).  Examine the first row:  How are the residuals calculated here? 
 
@@ -334,8 +342,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
-***
-
+____________
 
 
 # Hate Crimes and Household Income 
@@ -347,6 +354,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
+____________
 
 20. Were there more hate crimes in areas with high or low median household incomes? How large was the difference between states with "low" and "high" levels of household income?
 
@@ -357,6 +365,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 </div> 
 
+____________
 
 21. Show the first six rows of the output created from running the `get_regression_points()` function on `job_med_mod`. 
 
@@ -365,6 +374,7 @@ Type your complete sentence answer here using inline R code and delete this comm
 
 ```
 
+____________
 
 22. Take a look at data for Maine (row 2 of `hate_crimes`). Did the model (`job_med_mod`) **overpredict** or **underpredict** the `hate_crimes` level, compared to what was observed in the data?
 
@@ -376,6 +386,6 @@ Type your complete sentence answer here using inline R code and delete this comm
 </div> 
 
 
-***
+____________
 
 
