@@ -1502,8 +1502,8 @@ pre code {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -1511,16 +1511,9 @@ pre code {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -1640,7 +1633,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Problem Set 05: Regression with One Categorical Variable</h1>
 <h4 class="author">Your Name Goes Here</h4>
-<h4 class="date">Last compiled: July 18, 2022 at 09:57:25 AM</h4>
+<h4 class="date">Last compiled: February 15, 2023 at 09:30:08 AM</h4>
 
 </div>
 
@@ -1814,6 +1807,25 @@ group_by(trump_support) %&gt;%
 <p><span class="math display">\[
 \widehat{y} = 0.191 + 0.269 \times 1_{\mbox{low support}}(x) + 0.031 \times 1_{\mbox{med support}}(x)
 \]</span></p>
+<p>Another notation is to use a dummy variables (<span class="math inline">\(D_1\)</span>, and <span class="math inline">\(D_2\)</span>) and write the equation as</p>
+<p><span class="math display">\[\widehat{y} = 0.191 + 0.269 \times D_1 + 0.031 \times D_2\]</span>
+where</p>
+<p><span class="math display">\[\begin{equation*}
+D_1 =
+\begin{cases}
+1 &amp;\text{for low Trump support}\\
+0 &amp;\text{for medium Trump support}\\
+0 &amp;\text{for high Trump support}
+\end{cases}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+D_2 =
+\begin{cases}
+0 &amp;\text{for low Trump support}\\
+1 &amp;\text{for medium Trump support}\\
+0 &amp;\text{for high Trump support}
+\end{cases}
+\end{equation*}\]</span></p>
 <p>So for instance, in a state in which <code>trump_support</code> is “low” you would plug in 1 for <span class="math inline">\(1_{\mbox{low support}}(x)\)</span>, and 0 in for <span class="math inline">\(1_{\mbox{med support}}(x)\)</span> and solve as follows:</p>
 <hr />
 <p><span class="math display">\[

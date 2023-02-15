@@ -203,6 +203,29 @@ $$
 \widehat{y} = 0.191 + 0.269 \times 1_{\mbox{low support}}(x) + 0.031 \times 1_{\mbox{med support}}(x)
 $$
 
+Another notation is to use a dummy variables ($D_1$, and $D_2$) and write the equation as
+
+$$\widehat{y} = 0.191 + 0.269 \times D_1 + 0.031 \times D_2$$
+where
+
+\begin{equation*}
+D_1 =
+\begin{cases}
+1 &\text{for low Trump support}\\
+0 &\text{for medium Trump support}\\
+0 &\text{for high Trump support}
+\end{cases}
+\end{equation*}
+
+\begin{equation*}
+D_2 =
+\begin{cases}
+0 &\text{for low Trump support}\\
+1 &\text{for medium Trump support}\\
+0 &\text{for high Trump support}
+\end{cases}
+\end{equation*}
+
 So for instance, in a state in which `trump_support` is "low" you would plug in 1 for $1_{\mbox{low support}}(x)$, and 0 in for  $1_{\mbox{med support}}(x)$ and solve as follows:
 
 ____________
