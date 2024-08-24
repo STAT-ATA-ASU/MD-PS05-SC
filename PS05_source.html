@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified on August 07, 2023 17:01:47 Eastern Daylight Time</p>
+      <p class="date">Last modified on August 24, 2024 10:29:36 Eastern Daylight Time</p>
     </div>
   </div>
   
@@ -466,8 +466,8 @@ Problem 9
 <div class="callout-body-container callout-body">
 <p>Below we calculate the group means of hate crimes for the <code>high</code>, <code>medium</code> and <code>low</code> levels of Trump support. How do these numbers compare to the three possible fitted values <span class="math inline">\(\widehat{y}\)</span> for this model?</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hate_crimes <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(trump_support) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>hate_crimes <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(trump_support) <span class="sc">|&gt;</span> </span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_hate_crimes =</span> <span class="fu">mean</span>(hate_crimes, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
@@ -970,7 +970,7 @@ Problem 22 Answers
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reordering trump_support</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>hate_crimes <span class="ot">&lt;-</span> hate_crimes <span class="sc">%&gt;%</span> </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>hate_crimes <span class="ot">&lt;-</span> hate_crimes <span class="sc">|&gt;</span> </span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">trump_support =</span> <span class="fu">fct_relevel</span>(trump_support, </span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>))</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> hate_crimes, <span class="fu">aes</span>(<span class="at">x =</span> trump_support, <span class="at">y =</span> hate_crimes)) <span class="sc">+</span> </span>
@@ -1035,12 +1035,12 @@ Tip
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.2.3 (2023-03-15)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Red Hat Enterprise Linux 9.2 (Plow)
+<pre><code>R version 4.4.1 (2024-06-14)
+Platform: x86_64-redhat-linux-gnu
+Running under: Red Hat Enterprise Linux 9.4 (Plow)
 
 Matrix products: default
-BLAS/LAPACK: /usr/lib64/libopenblasp-r0.3.21.so
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
 
 locale:
  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
@@ -1050,32 +1050,35 @@ locale:
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
+time zone: America/New_York
+tzcode source: system (glibc)
+
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] forcats_1.0.0    readr_2.1.4      moderndive_0.5.5 dplyr_1.1.2     
-[5] ggplot2_3.4.2    knitr_1.43      
+[1] forcats_1.0.0    readr_2.1.5      moderndive_0.6.1 dplyr_1.1.4     
+[5] ggplot2_3.5.1    knitr_1.48      
 
 loaded via a namespace (and not attached):
- [1] tidyselect_1.2.0     xfun_0.39            janitor_2.2.0       
- [4] purrr_1.0.1          operator.tools_1.6.3 snakecase_0.11.0    
- [7] colorspace_2.1-0     vctrs_0.6.3          generics_0.1.3      
-[10] htmltools_0.5.5      yaml_2.3.7           utf8_1.2.3          
-[13] rlang_1.1.1          pillar_1.9.0         glue_1.6.2          
-[16] withr_2.5.0          infer_1.0.4          bit64_4.0.5         
-[19] lifecycle_1.0.3      stringr_1.5.0        munsell_0.5.0       
-[22] gtable_0.3.3         htmlwidgets_1.6.2    evaluate_0.21       
-[25] labeling_0.4.2       tzdb_0.4.0           fastmap_1.1.1       
-[28] parallel_4.2.2       fansi_1.0.4          broom_1.0.5         
-[31] backports_1.4.1      scales_1.2.1         vroom_1.6.3         
-[34] jsonlite_1.8.7       farver_2.1.1         bit_4.0.5           
-[37] hms_1.1.3            digest_0.6.33        stringi_1.7.12      
-[40] formula.tools_1.7.1  grid_4.2.2           cli_3.6.1           
-[43] tools_4.2.2          magrittr_2.0.3       tibble_3.2.1        
-[46] crayon_1.5.2         tidyr_1.3.0          pkgconfig_2.0.3     
-[49] lubridate_1.9.2      timechange_0.2.0     rmarkdown_2.23      
-[52] rstudioapi_0.15.0    R6_2.5.1             compiler_4.2.2      </code></pre>
+ [1] utf8_1.2.4           generics_0.1.3       tidyr_1.3.1         
+ [4] stringi_1.8.4        hms_1.1.3            digest_0.6.36       
+ [7] magrittr_2.0.3       evaluate_0.24.0      grid_4.4.1          
+[10] timechange_0.3.0     fastmap_1.2.0        operator.tools_1.6.3
+[13] jsonlite_1.8.8       backports_1.5.0      purrr_1.0.2         
+[16] fansi_1.0.6          scales_1.3.0         infer_1.0.7         
+[19] cli_3.6.3            rlang_1.1.4          crayon_1.5.3        
+[22] bit64_4.0.5          munsell_0.5.1        withr_3.0.1         
+[25] yaml_2.3.10          tools_4.4.1          parallel_4.4.1      
+[28] tzdb_0.4.0           colorspace_2.1-1     broom_1.0.6         
+[31] vctrs_0.6.5          R6_2.5.1             lifecycle_1.0.4     
+[34] lubridate_1.9.3      snakecase_0.11.1     stringr_1.5.1       
+[37] htmlwidgets_1.6.4    bit_4.0.5            vroom_1.6.5         
+[40] janitor_2.2.0        pkgconfig_2.0.3      pillar_1.9.0        
+[43] gtable_0.3.5         glue_1.7.0           xfun_0.47           
+[46] tibble_3.2.1         tidyselect_1.2.1     rstudioapi_0.16.0   
+[49] farver_2.1.2         htmltools_0.5.8.1    labeling_0.4.3      
+[52] rmarkdown_2.28       formula.tools_1.7.1  compiler_4.4.1      </code></pre>
 </div>
 </div>
 </section>
